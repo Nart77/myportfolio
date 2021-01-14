@@ -60,4 +60,10 @@ class QueryBuilder
             //
         }
     }
+    public function delete($table)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM $table WHERE id={$_GET['id']}");
+        $statement->execute();
+        echo "Record deleted successfully";
+    }
 }

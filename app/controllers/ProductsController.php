@@ -11,9 +11,9 @@ class ProductsController
      */
     public function index()
     {
-        $users = App::get('database')->selectAll('users');
+        $products = App::get('database')->selectAll('products');
 
-        return view('users', compact('users'));
+        return view('products', compact('products'));
     }
 
     /**
@@ -21,13 +21,19 @@ class ProductsController
      */
     public function store()
     {
-        App::get('database')->insert('users', [
+        App::get('database')->insert('products', [
             'title' => $_POST['title'],
             'image' => $_POST['image'],
             'description' => $_POST['description']
 
         ]);
 
-        return redirect('users');
+        return redirect('products');
+    }
+    public function delete()
+    {
+       App::get('database')->delete('products');
+
+       return redirect('products');
     }
 }
