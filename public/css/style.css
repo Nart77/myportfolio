@@ -4,3 +4,12 @@ body {
 .bg-light {
     background-color: rgb(153, 152, 152) !important;
 }
+
+#navbarDropdown {
+   color: red; 
+  
+
+}
+a img, .logo {
+    width: 40px;
+}
