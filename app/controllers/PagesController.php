@@ -9,7 +9,8 @@ class PagesController
      */
     public function home()
     {
-        return view('index');
+        $products = App::get('database')->selectAll('products');
+        return view('index', ['products' =>$products]);
     }
 
     /**
