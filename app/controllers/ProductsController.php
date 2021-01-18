@@ -6,19 +6,37 @@ use App\Core\App;
 
 class ProductsController
 {
+    // public function index()
+    // {
+    //     if (isset($_SESSION) && isset($_SESSION['user']))
+    //     {
+    //     $loguser =$_SESSION['user'];
+    //     var_dump($loguser);
+    //    return view('products', compact('loguser'));
+    // }else{return redirect('login');}
+    // }
     /**
      * Show all users.
      */
     public function index()
     {
-        $products = App::get('database')->selectAll('products');
+        $loguser =$_SESSION['user'] ;
 
-        return view('products', compact('products'));
+        $products = App::get('database')->selectAll('products');
+$users = App::get('database')->selectAll('users');
+        return view('products', compact('products','users'));
     }
 
     /**
      * Store a new user in the database.
      */
+    // public function index2()
+    // {
+    //     $users = App::get('database')->selectAll('users');
+
+    //     return view('products', compact('users'));
+    // }
+
     public function store()
     {
         App::get('database')->insert('products', [
@@ -33,6 +51,12 @@ class ProductsController
     public function delete()
     {
        App::get('database')->delete('products');
+
+       return redirect('products');
+    }
+    public function delete2()
+    {
+       App::get('database')->delete('users');
 
        return redirect('products');
     }

@@ -33,9 +33,9 @@ class PagesController
     /**
      * Show the about culture page.
      */
-    public function products()
-    {
-        $company = 'Products';
-        return view('products',['company' => $company]);
-    }
+  
+
+
+
+ 
 }

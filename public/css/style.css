@@ -6,10 +6,21 @@ body {
 }
 
 #navbarDropdown {
-   color: red; 
+   color: rgb(246, 76, 76); 
   
 
 }
 a img, .logo {
     width: 40px;
+}
+
+
+/* -------------Login page style------------------- */
+
+.login {
+   width: 300px;
+   margin: 100px auto;
+}
+.login input {
+    margin-bottom: 10px;
 }

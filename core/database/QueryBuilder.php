@@ -66,4 +66,12 @@ class QueryBuilder
         $statement->execute();
         echo "Record deleted successfully";
     }
+    public function query()
+  {
+      $statement = $this->pdo->prepare("SELECT username, password FROM users WHERE username='{$_REQUEST['username']}'");
+      //var_dump($statement);
+      $statement->execute();
+
+      return $statement->fetchAll(PDO::FETCH_CLASS);
+  }
 }

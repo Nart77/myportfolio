@@ -1,6 +1,6 @@
 <?php require('partials/head.php'); ?>
 
-    <h1>Products Page</h1>
+    <h1>Manage Page</h1>
 
 
 
@@ -19,6 +19,14 @@
   <p> <?= $product->description; ?> </p>
   <a href="/products/delete?id=<?= $product->id; ?>">delete</a>
 <?php endforeach; ?>
+
+<?php foreach ($users as $user) : ?>
+  <h1> <?= $user->username; ?> </h1>
+  <h1> <?= $user->email; ?> </h1>
+  <h1> <?= $user->fullname; ?> </h1>
+  <a href="/products/delete?id=<?= $user->id; ?>">delete</a>
+<?php endforeach; ?>
+
 
 </div>
 

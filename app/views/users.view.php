@@ -1,16 +1,7 @@
 <?php require('partials/head.php'); ?>
+<!--or php include ('partials/head.php')-->
+<h3>De deelnemers</h3>
 
-    <h1>Login Page</h1>
-
-<?php foreach ($users as $user) : ?>
-    <li><?= $user->name; ?></li>
-<?php endforeach; ?>
-
-<h1>Here the form to login</h1>
-
-<form method="POST" action="/users">
-    <input name="name"></input>
-    <button type="submit">Submit</button>
-</form>
+<h1><?= $loguser ["name"]; ?></h1>
 
 <?php require('partials/footer.php'); ?>
